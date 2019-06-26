@@ -14,11 +14,18 @@
     
     NSString *fugaString = @"fugafuga";
     
-    if ([self.delegate respondsToSelector:@selector(hoge:)]) {
-        [self.delegate hoge:fugaString];
+    if ([self.hogeDelegate respondsToSelector:@selector(hoge:)]) {
+        [self.hogeDelegate hoge:fugaString];
     }
     
 }
+
+- (void) action {
+    if ([self.alertDelegate respondsToSelector:@selector(hoge:)]) {
+        [self.alertDelegate showAlert];
+    }
+}
+
 
 @end
 

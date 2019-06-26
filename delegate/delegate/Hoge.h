@@ -17,13 +17,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface Hoge : NSObject
+@protocol AlertDelegate <NSObject>
 
-@property (weak, nonatomic) id <HogeDelegate> delegate;
-
-- (void) fuga;
+- (void) showAlert;
 
 @end
+
+@interface Hoge : NSObject
+
+@property (weak, nonatomic) id <HogeDelegate> hogeDelegate;
+- (void) fuga;
+
+@property (weak, nonatomic) id <AlertDelegate> alertDelegate;
+- (void) action;
+
+@end
+
 
 
 NS_ASSUME_NONNULL_END
